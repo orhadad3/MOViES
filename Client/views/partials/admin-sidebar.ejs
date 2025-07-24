@@ -1,0 +1,39 @@
+<div class="col-auto p-0 ms-2 bg-body-tertiary text-white d-flex flex-column admin-nav">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+            <a href="/admin" class="nav-link py-3 border-bottom rounded-bottom-0 fs-4 text-white <%= adminPage === 'dashboard' ? 'active' : '' %>"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Admin Panel">
+                <i class="bi bi-house-door"></i>
+                <span class="d-block d-md-none mt-1 fs-6">Admin Panel</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/users" class="nav-link py-3 border-bottom rounded-0 fs-4 text-white <%= adminPage === 'users' ? 'active' : '' %>"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Users">
+                <i class="bi bi-people"></i>
+                <span class="d-block d-md-none mt-1 fs-6">Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/links" class="nav-link py-3 rounded-0 border-bottom fs-4 text-white <%= adminPage === 'links' ? 'active' : '' %>"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Links">
+                <i class="bi bi-link-45deg"></i>
+                <span class="d-block d-md-none mt-1 fs-6">Links</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/reviews" class="nav-link py-3 rounded-0 fs-4 text-white <%= adminPage === 'reviews' ? 'active' : '' %>"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Reviews">
+                <i class="bi bi-clipboard-check fs-5"></i>
+                <span class="d-block d-md-none mt-1 fs-6">Reviews</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        [...tooltips].map(t => new bootstrap.Tooltip(t));
+    });
+</script>

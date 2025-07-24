@@ -1,0 +1,58 @@
+html,
+body {
+    height: 100%;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    line-height: initial;
+}
+
+.logo .bi::before {
+    color: #FFF;
+    font-size: 2.5rem;
+    vertical-align: baseline;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    animation: logo-bounce 0.9s ease-out 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes logo-bounce {
+    50% {
+        text-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+        transform: rotate(20deg) translateY(-10px);
+    }
+}
+
+.form-signin,
+.form-register {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within,
+.form-register .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"],
+.form-register input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-register input[type="email"],
+.form-register input[name="password"] {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.form-signin input[type="password"],
+.form-register input[name="confirmPassword"] {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/register-validation.css" rel="stylesheet">
+    <title>MOViES - Register</title>
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-register w-100 m-auto">
+        <div class="logo navbar-brand">
+            <a href="/" class="text-decoration-none text-warning">
+                MOViES
+                <i class="bi bi-film"></i>
+            </a>
+        </div>
+
+        <h1 class="h3 mb-3 fw-normal text-center">Create your account</h1>
+
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form action="/register" method="POST" id="registerForm">
+            <div class="form-floating">
+                <input type="text" 
+                       value="<%= formData?.username || '' %>" 
+                       autocomplete="username" 
+                       name="username" 
+                       class="form-control" 
+                       id="username" 
+                       placeholder="Username"
+                       data-bs-toggle="tooltip">
+                <label for="username">Username</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="email" 
+                       value="<%= formData?.email || '' %>" 
+                       autocomplete="email" 
+                       name="email" 
+                       class="form-control" 
+                       id="email" 
+                       placeholder="Email">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" 
+                       value="<%= formData?.password || '' %>" 
+                       autocomplete="new-password" 
+                       name="password" 
+                       class="form-control" 
+                       id="password" 
+                       placeholder="Password"
+                       data-bs-toggle="tooltip">
+                <label for="password">Password</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" 
+                       value="<%= formData?.confirmPassword || '' %>" 
+                       autocomplete="new-password" 
+                       name="confirmPassword" 
+                       class="form-control" 
+                       id="confirmPassword" 
+                       placeholder="Confirm Password"
+                       data-bs-toggle="tooltip">
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+
+            <button class="btn btn-secondary w-100 py-2 mt-3" type="submit" id="submitBtn" disabled>
+                Register
+            </button>
+            <p class="mt-2 mb-3 text-body-secondary text-center">
+                Already have an account? <a href="/login">Sign in</a>
+            </p>
+        </form>
+    </main>
+
+    <% if (typeof successMessage !== 'undefined' && successMessage) { %>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                showAlert('<i class="bi bi-check-circle-fill text-success"></i> <%= successMessage %>');
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 1500);
+            });
+        </script>
+    <% } %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/register-validation.js"></script>
+</body>
+</html>

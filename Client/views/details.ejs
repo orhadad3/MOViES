@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+    
+    <div class="d-flex justify-content-center my-3 d-none" id="spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    
+    <div class="container fade" id="displayFade">
+        <div class="d-inline-flex gap-3 mb-4 justify-content-start">
+            <button type="button" class="btn btn-outline-light" id="return"><i class="bi bi-arrow-return-left"></i> Return to search</button>
+            <button type="button" class="btn btn-outline-warning d-none" id="favorite"><i class="bi bi-star-fill"></i> Add to Favorites</button>
+            <button type="button" class="btn btn-outline-danger d-none" id="del_favorite"><i class="bi bi-trash3-fill"></i> Remove from Favorites</button>
+        </div>
+
+        <div id="details-container"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/details.js"></script>
+<%- include('partials/footer') %>
