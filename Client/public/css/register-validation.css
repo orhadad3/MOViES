@@ -1,0 +1,128 @@
+/* Client/public/css/register-validation.css */
+
+/* Remove spacing between form inputs */
+.form-floating + .form-floating {
+    margin-top: -1px;
+}
+
+.form-floating:first-child input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-floating:not(:first-child):not(:last-of-type) input {
+    border-radius: 0;
+}
+
+.form-floating:last-of-type input {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Custom validation styling */
+.form-floating input.is-valid {
+    border-color: #20c997;
+}
+
+.form-floating input.is-invalid {
+    border-color: #fd7e14;
+}
+
+.form-floating input:focus.is-valid {
+    border-color: #20c997;
+    box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.25);
+}
+
+.form-floating input:focus.is-invalid {
+    border-color: #fd7e14;
+    box-shadow: 0 0 0 0.25rem rgba(253, 126, 20, 0.25);
+}
+
+/* Custom tooltip content styling */
+.tooltip-inner {
+    text-align: left;
+    max-width: 300px;
+    padding: 0.75rem;
+    background-color: #212529;
+}
+
+/* Fix tooltip arrow color */
+.validation-tooltip .tooltip-arrow::before {
+    border-right-color: #212529 !important;
+}
+
+.validation-tooltip.bs-tooltip-left .tooltip-arrow::before {
+    border-left-color: #212529 !important;
+}
+
+.validation-tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #212529 !important;
+}
+
+.validation-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #212529 !important;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.requirement:last-child {
+    margin-bottom: 0;
+}
+
+.requirement i {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.requirement.valid {
+    color: #20c997;
+}
+
+.requirement.invalid {
+    color: #fd7e14;
+}
+
+.requirement.neutral {
+    color: #adb5bd;
+}
+
+.tooltip-header {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Loading state for submit button */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-loading span {
+    opacity: 0;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

@@ -1,0 +1,12 @@
+{
+  "reviews": [
+    {
+      "id": "1fb2ee50-0968-4c66-ac98-f515d301cbe2",
+      "linkId": "ee4f5bd2-35b0-434b-ae0d-fb8e61c67465",
+      "username": "test",
+      "rating": 5,
+      "comment": "Test Reviews Link",
+      "createdAt": "2025-08-09T16:15:58.618Z"
+    }
+  ]
+}

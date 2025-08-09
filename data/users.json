@@ -1,0 +1,18 @@
+[
+  {
+    "id": "966248b6-4b77-4b42-acc7-303a8738616a",
+    "username": "test",
+    "email": "orhadad3@gmail.com",
+    "password": "test",
+    "type": "user",
+    "createdAt": "2025-07-24T16:49:48.872Z"
+  },
+  {
+    "id": "c65a45ce-8a31-43f0-83e2-f19af030caf5",
+    "username": "admin",
+    "email": "orhadad3@gmail.com",
+    "password": "admin",
+    "type": "admin",
+    "createdAt": "2025-08-09T16:16:28.817Z"
+  }
+]
