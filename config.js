@@ -4,7 +4,7 @@ const { readJsonFile } = require('./models/jsonFunction');
 
 module.exports = {
     useMongoDB: true, // Change this value to switch between MongoDB and JSON
-    mongoUrl: "mongodb+srv://orhadad3:o84AwVzF0RrSllSF@movieapp.1fho1.mongodb.net/movies", // MongoDB connection string
+    mongoUrl: "Connection String HERE!", // MongoDB connection string
 
     // JSON file paths (used only if useMongoDB is false)
     jsonFiles: {
